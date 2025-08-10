@@ -1,0 +1,32 @@
+services:
+  wordpress:
+    image: wordpress:6.6.2-php8.1-apache
+    container_name: wordpress
+    ports:
+      - 8087:80
+    volumes:
+      - wordpress:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=wordpress_user
+      - WORDPRESS_DB_PASSWORD=wordpress_password
+      - WORDPRESS_DB_NAME=wordpress_db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=wordpress_db
+      - MYSQL_USER=wordpress_user
+      - MYSQL_PASSWORD=wordpress_password
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
+
+volumes:
+  wordpress:
+  mysql:
