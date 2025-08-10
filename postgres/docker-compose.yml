@@ -1,0 +1,28 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4:9.0
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=SuperSecret
+    ports:
+      - "8080:80"
+
+  postgres:
+    image: postgres:17.2
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-network
+    volumes:
+      - postgres-volume:/var/liv/postgres/data
+
+networks:
+  postgres-network:
+    driver: bridge
+
+volumes:
+  postgres-volume:
