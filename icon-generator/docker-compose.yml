@@ -2,7 +2,7 @@ services:
   icon-generator:
     image: boring-avatars-services
     build:
-      context: .
+      context: ./nodejs
       dockerfile: Dockerfile
     ports:
       - 3000:3000
