@@ -6,3 +6,26 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+
+  web:
+    image: boring-avatars-web
+    build:
+      context: ./ruby
+      dockerfile: Dockerfile
+    ports:
+      - 4567:4567
+    environment:
+      AVATAR_SERVICES_HOST: icon-generator
+      AVATAR_SERVICES_PORT: 3000
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - type: bind
+        source: ./ruby
+        target: /app
+
+  redis:
+    image: redis:7.4.2
+    ports:
+      - 6379:6379
+    

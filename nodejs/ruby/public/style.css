@@ -1,0 +1,85 @@
+/* style.css */
+body {
+    background: #fff0f6;
+    font-family: 'ヒラギノ丸ゴ Pro', 'Hiragino Maru Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+    color: #5a3e36;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+h1 {
+    color: #d16a6a;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px #f7c6c6;
+}
+
+form {
+    background: #ffe4e1;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(209, 106, 106, 0.3);
+    width: 320px;
+}
+
+form div {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #8b4b4b;
+}
+
+input[type="text"] {
+    padding: 12px 15px;
+    border: 2px solid #f8c8c8;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #d16a6a;
+    outline: none;
+    background-color: #fff0f0;
+}
+
+input[type="submit"] {
+    background-color: #f28f8f;
+    color: white;
+    border: none;
+    padding: 14px 0;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 10px #f9a3a3;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #d16a6a;
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 400px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+}

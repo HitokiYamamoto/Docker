@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boring Avatars</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>アイコン画像作成</h1>
+    <div class="container">
+        <form action="/identicon" method="post">
+            <div>
+                <label for="name">名前</label>
+                <input type="text" value="<%= params[:name] %>" name="name" id="name">
+            </div>
+            <div>
+                <input type="submit" value="アイコン画像作成">
+            </div>
+        </form>
+        <% if @identicon %>
+            <h2>生成されたアイコン画像</h2>
+            <div class="icon-generator">
+                <%= @identicon %>
+            </div>
+        <% end %>
+    </div>
+
+</body>
+</html>
