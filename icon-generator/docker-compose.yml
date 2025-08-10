@@ -4,6 +4,7 @@ services:
     build:
       context: ./nodejs
       dockerfile: Dockerfile
+    container_name: icon-generator
     ports:
       - 3000:3000
 
@@ -12,6 +13,7 @@ services:
     build:
       context: ./ruby
       dockerfile: Dockerfile
+    container_name: web
     ports:
       - 4567:4567
     environment:
@@ -26,6 +28,7 @@ services:
 
   redis:
     image: redis:7.4.2
+    container_name: redis
     ports:
       - 6379:6379
     
