@@ -105,3 +105,9 @@ r_mailer/welcome_email.html.erb
 ### MailCatcherで確認
 
 `http://localhost:1080/` にアクセス
+
+## ブレイクポイント設定
+
+```shell
+docker compose attach web
+```
