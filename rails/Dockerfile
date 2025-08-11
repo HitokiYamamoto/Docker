@@ -1,4 +1,4 @@
-FROM ruby:3.2
+FROM ruby:3.2.2
 
 RUN apt-get update -qq && apt-get install -y \
     build-essential \
@@ -9,4 +9,4 @@ RUN apt-get update -qq && apt-get install -y \
 
 WORKDIR /app
 
-RUN gem install rails
+RUN gem install rails -v 8.0.2
